@@ -1,0 +1,24 @@
+PIPE & Interpolation:: {{item|json}}
+
+<br><br>
+
+<h3>Two way Binding & Interpolation:</h3><br>
+item.string: <input type="text" class="from-control" [(ngModel)]="item.string"> = {{item.string}}<br>
+item.integer: <input type="text" class="from-control" [(ngModel)]="item.integer"> = {{item.integer}}
+<br>
+
+<h3>(Directives *ngIf item.integer >=10)</h3> <p *ngIf="item.integer>=10">Admin</p>
+
+<br>
+<h3>(Directives *ngSwitch item.integer== 1 or 2  )</h3>
+<div [ngSwitch]="item.integer">
+    <p *ngSwitchCase=1>First</p>
+    <p *ngSwitchCase=2>two</p>
+</div>
+
+<h3>(Directives *ngFor) && childRoutes && Navigate Router</h3> 
+<div *ngFor="let ele of tab;index as i">
+    <p>
+       {{i+1}} : {{ele}}  <button type="button" (click)="gopath('/array/'+i)" class="btn btn-success">go Page1(Navigate Router)</button>
+    </p>
+</div>
